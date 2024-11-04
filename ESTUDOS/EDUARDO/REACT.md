@@ -1,4 +1,4 @@
-# Apresentação do React JS
+# Primeiro plano de apresentação das ferramentas utilizadas: Introdução ao React JS
 
 ## O que é React?
 
