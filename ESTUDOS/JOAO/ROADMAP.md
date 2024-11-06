@@ -1,4 +1,4 @@
-#Plano de estudo João Maurício para projeto de MDS
+# Plano de estudo João Maurício para projeto de MDS
 ---
 #### *No momento do primeiro commit desse arquivo, ainda não batemos a clava em todas as tecnologias, portanto, elas podem estar sujeitas a mudanças.*
 
