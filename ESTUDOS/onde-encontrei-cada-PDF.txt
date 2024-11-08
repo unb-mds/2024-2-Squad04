@@ -1,0 +1,11 @@
+zoho-inventory-features.pdf
+link: https://www.zoho.com/inventory/features/ebook/zoho-inventory-features.pdf
+Descreve oficialmente todas as funcionalidades do aplicativo de gestão de invetário da Zoho
+
+Scrum-Guide-PT-BR-3.0-2020.pdf
+link: https://scrumguides.org/download.html
+Guia oficial do scrum em português brasil
+
+git-cheat-sheet-education.pdf
+link: https://education.github.com/git-cheat-sheet-education.pdf
+Principais comandos utilizados no git
