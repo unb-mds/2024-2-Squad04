@@ -33,8 +33,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     #My apps
-    'personal',
-
+    'dashboard',
+    'homepage',
 
     #Django base apps
     'django.contrib.admin',

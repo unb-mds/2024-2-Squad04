@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Inventário de Estoque</h1>
+
+<button class="btn" onclick="openModal()">Adicionar Item</button>
+
+<table id="inventory-table">
+  <thead>
+    <tr>
+      <th>Nome do Item</th>
+      <th>Quantidade</th>
+      <th>Categoria</th>
+      <th>Descrição</th>
+      <th>Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Os itens serão adicionados aqui dinamicamente -->
+  </tbody>
+</table>
+
+<div id="itemModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">Adicionar Novo Item</div>
+    <form id="itemForm">
+      <label for="itemName">Nome do Item:</label><br>
+      <input type="text" id="itemName" name="itemName" required><br><br>
+      <label for="itemQuantity">Quantidade:</label><br>
+      <input type="number" id="itemQuantity" name="itemQuantity" required><br><br>
+      <label for="itemCategory">Categoria:</label><br>
+      <input type="text" id="itemCategory" name="itemCategory" required><br><br>
+      <label for="itemDescription">Descrição:</label><br>
+      <textarea id="itemDescription" name="itemDescription" rows="4" required></textarea><br><br>
+      <label for="itemPrice">Preço:</label><br>
+      <input type="text" id="itemPrice" name="itemPrice" required><br><br>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-close" onclick="closeModal()">Cancelar</button>
+        <button type="submit" class="btn">Adicionar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('itemModal');
+  const form = document.getElementById('itemForm');
+  const table = document.getElementById('inventory-table').getElementsByTagName('tbody')[0];
+
+  function openModal() {
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    form.reset();
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('itemName').value;
+    const quantity = document.getElementById('itemQuantity').value;
+    const category = document.getElementById('itemCategory').value;
+    const description = document.getElementById('itemDescription').value;
+    const price = document.getElementById('itemPrice').value;
+
+    // Criar nova linha na tabela
+    const newRow = table.insertRow();
+    newRow.insertCell(0).innerText = name;
+    newRow.insertCell(1).innerText = quantity;
+    newRow.insertCell(2).innerText = category;
+    newRow.insertCell(3).innerText = description;
+    newRow.insertCell(4).innerText = price;
+
+    closeModal();
+  });
+
+  // Fechar o modal ao clicar fora dele
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  }
+</script>
+
+{% endblock content %}

@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from personal.views import (
+from homepage.views import (
     home_page_view,
 )
 from dashboard.views import (
@@ -26,5 +26,5 @@ from dashboard.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page_view, name= "home"),
-    path('dashboard/', dashboard_view, name= "home"),
+    path('dashboard/', dashboard_view, name= "dashboard"),
 ]
