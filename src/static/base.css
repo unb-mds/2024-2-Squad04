@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header, footer{
+    background-color: black;
+    color: aliceblue;
+    width: 100vw;  /* Garante que o header e footer ocupem toda a largura da página */
+}
+
+footer{
+    position: absolute; /* Altera a posição para 'relative' ou remova a posição absoluta */
+    bottom: 0;
+    text-align: center;
+    font-size: 22px;
+    padding: 30px 0;
+}
+
+header h2{
+    font-size: 30px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;  /* Garante que o header ocupe toda a largura da página */
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 18px;
+    padding: 0 15px;
+}
