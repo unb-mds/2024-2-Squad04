@@ -1,6 +1,9 @@
 # ignora ambiente virtual
 .venv
 
+# ignora variáveis do ambiente
+.env
+
 # ignora o cache
 *.pyc
 __pycache__/
