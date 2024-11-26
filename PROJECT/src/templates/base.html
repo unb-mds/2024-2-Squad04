@@ -6,6 +6,7 @@
   <title>Inventário de Estoque</title>
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dashboard.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'homepage/homepage.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
 </head>
 <body>
@@ -15,10 +16,14 @@
       </div>
       <nav>
         <ul>
-          <li><a href="#">home</a></li>
-          <li><a href="#">about</a></li>
-          <li><a href="#">storages</a></li>
-          <li><a href="#">contact</a></li>
+          <li><a href="{% url 'homepage' %}">Home</a></li>
+          <li><a href="#manage-inventories">Manage Inventories</a></li>
+          <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+          <li><a href="#others">Others</a></li>
+          <li><a href="#register">Register</a></li>
+          <li><a href="#login">Login</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About</a></li>
         </ul>
       </nav>
     </header>

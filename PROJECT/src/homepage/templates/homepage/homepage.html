@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main>
+    <section id="hero" style="background-color: #4CAF50; color: white; padding: 50px 20px; text-align: center;">
+        <h1>Gerencie seu Estoque com Facilidade</h1>
+        <br>
+        <p>Descubra a solução perfeita para monitorar, organizar e otimizar seus inventários de forma eficiente e prática.</p>
+        <br>
+        <button style="background-color: white; color: #4CAF50; padding: 10px 20px; border: none; font-size: 16px; cursor: pointer;">
+            Saiba Mais
+        </button>
+    </section>
+
+    <section id="content" style="padding: 50px 20px;">
+        <h2 style="text-align: center; color: #333;">Por que Escolher Nosso Sistema?</h2>
+        <br>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 30px; gap: 20px;">
+            <!-- Funcionalidade 1 -->
+            <div style="flex: 1; max-width: 300px; text-align: center; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+                <img src="https://via.placeholder.com/100" alt="Controle de Estoque" style="width: 100px; margin-bottom: 10px;">
+                <h3 style="color: #4CAF50;">Controle de Estoque</h3>
+                <p>Monitore suas entradas, saídas e transferências em tempo real, garantindo total controle do seu inventário.</p>
+            </div>
+    
+            <!-- Funcionalidade 2 -->
+            <div style="flex: 1; max-width: 300px; text-align: center; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+                <img src="https://via.placeholder.com/100" alt="Relatórios Personalizáveis" style="width: 100px; margin-bottom: 10px;">
+                <h3 style="color: #4CAF50;">Relatórios Personalizáveis</h3>
+                <p>Gere relatórios detalhados e gráficos para tomar decisões baseadas em dados precisos.</p>
+            </div>
+    
+            <!-- Funcionalidade 3 -->
+            <div style="flex: 1; max-width: 300px; text-align: center; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+                <img src="https://via.placeholder.com/100" alt="Notificações Inteligentes" style="width: 100px; margin-bottom: 10px;">
+                <h3 style="color: #4CAF50;">Notificações Inteligentes</h3>
+                <p>Receba alertas sobre estoque baixo, vencimentos próximos ou movimentações incomuns.</p>
+            </div>
+        </div>
+    </section>
+    
+</main>
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+nav {
+    margin: 0;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+#hero button:hover {
+    background-color: #388E3C;
+    color: white;
+}
+
+#content div:hover {
+    border-color: #4CAF50;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
