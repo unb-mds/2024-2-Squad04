@@ -1,9 +1,15 @@
 # 2024-2-Squad04
 
 ## Descrição
-Aplicação de Gerenciamento de inventário
+Esse é um projeto da disciplina de Métodos de Desenvolvimento de Software, da Universidade de Brasília. O nosso objetivo é trabalhar nas diferentes áreas que envolvem o ciclo de vida de um software, afim de desenvolver uma aplicação de gerenciamento/gestão de inventário(s).
 
 ---
+
+## Equipe
+
+* Architect: [VictorPontual](https://github.com/VictorPontual)
+* Scrum Master: [caio-venancio](https://github.com/caio-venancio)
+* Product Owner: [eduardodpms](https://github.com/eduardodpms)
 
 ### Pré-requisitos
 1. Docker Engine (ou Docker desktop)
