@@ -1,7 +1,7 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+.pad {
+    padding: 20px;
 }
+
 table {
 width: 100%;
 border-collapse: collapse;

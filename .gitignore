@@ -1,7 +1,7 @@
 # ignora ambiente virtual
 .venv
 
-# ignora variáveis do ambiente
+#ignora 
 .env
 
 # ignora o cache
