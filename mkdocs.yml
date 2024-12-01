@@ -1,0 +1,6 @@
+site_name: Gestão de Inventário
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Sprints: sprints.md
