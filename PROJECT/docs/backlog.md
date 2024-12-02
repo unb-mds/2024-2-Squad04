@@ -20,7 +20,7 @@ Neste arquivo se encontra o relatório de todas as funcionalidades a serem imple
 ## **1. Gerenciamento de Produtos (Dashboard)**
 
 - ### CRUD
-  - [ ] https://github.com/unb-mds/2024-2-Squad04/issues/3
+  - [ ] [Issue #3](https://github.com/unb-mds/2024-2-Squad04/issues/3)
 - ### Gerenciamento com Códigos de Barra
 - ### Categorização dos Itens
 <br>
@@ -28,7 +28,7 @@ Neste arquivo se encontra o relatório de todas as funcionalidades a serem imple
 ## **2. Composição da Main Page**
 
 - ### Acesso à página de usuário e ao Dashboard
-  - [ ] https://github.com/unb-mds/2024-2-Squad04/issues/7
+  - [x] [Issue #7](https://github.com/unb-mds/2024-2-Squad04/issues/7)
 - ### Informações e referências importantes sobre a aplicação
 <br>
 
