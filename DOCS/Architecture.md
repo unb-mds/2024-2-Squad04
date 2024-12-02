@@ -1,6 +1,3 @@
-Aqui está o Markdown completo com todas as seções que você solicitou:  
-
-```markdown
 # **Sistema de Gestão de Inventário**
 
 ## **1. Descrição do Sistema**  
@@ -17,22 +14,21 @@ O sistema segue uma arquitetura modular e escalável, dividida em quatro camadas
 3. **Banco de Dados:** Armazena dados estruturados e históricos de ações.  
 4. **Serviços Externos:** Integrações opcionais, como provedores de autenticação ou relatórios analíticos.  
 
-### **Diagrama de Arquitetura Geral**  
+### **Diagrama de Arquitetura Geral** 
 ```plaintext
-+---------------------+       WebSocket         +--------------------+
-|     Frontend        | <---------------------> |     Backend        |
-| (HTML, Vue.js)      |                        | (Django + REST API)|
-+---------------------+        HTTP/REST        +--------------------+
-          |                                         |
-          | Database Queries                        | External Services
-          V                                         V
++---------------------+       WebSocket           +--------------------+
+|     Frontend        | <--------------------->   |     Backend        |
+| (HTML, Vue.js)      |                           | (Django + REST API)|
++---------------------+        HTTP/REST          +--------------------+
+          |                                                 |
+          | Database Queries                                | External Services
+          V                                                 V
 +---------------------+       PostgreSQL          +--------------------+
 |  Banco de Dados     |                           |  Integrações       |
 | (Dados do estoque)  |                           | (Auth, Analytics)  |
 +---------------------+                           +--------------------+
 ```
 
----
 
 ## **3. Principais Componentes e Papéis**  
 
@@ -93,12 +89,8 @@ O sistema segue uma arquitetura modular e escalável, dividida em quatro camadas
    - Autenticação e análises opcionais são chamadas conforme necessidade.  
 
 ### **Fluxo em Diagrama**  
-```plaintext
-Usuário --> Frontend --> Backend --> Banco de Dados
-   |            ^             |            ^
-   |            |             |            |
-Notificações <-- WebSocket <--|            |
-```
+Usuário --> Frontend --> Backend --> Banco de Dados | ^ | ^ | | | | Notificações <-- WebSocket <--| |
+
 
 ---
 
@@ -122,29 +114,3 @@ inventory-management/
 ├── manage.py                 # Script principal do Django
 ├── requirements.txt          # Dependências do projeto
 └── ...
-```
-
----
-
-## **6. Segurança**  
-- Criptografia de senhas com o módulo `pbkdf2` do Django.  
-- Validação de entrada nos endpoints REST com DRF.  
-- Permissões definidas com base em grupos de usuários.  
-
----
-
-## **7. Testes**  
-
-| Tipo               | Descrição                                               | Ferramenta         |  
-|---------------------|---------------------------------------------------------|--------------------|  
-| Teste Unitário      | Verifica funções individuais (ex.: validação de dados). | pytest-django      |  
-| Teste de Integração | Garante o funcionamento entre módulos (ex.: views e API). | Django Test Framework |  
-| Teste End-to-End    | Simula fluxo de usuário no frontend e backend.          | Selenium/Playwright|  
-
----
-
-## **8. Glossário**  
-- **CSRF:** Proteção contra falsificação de requisições.  
-- **Socket.IO:** Biblioteca para comunicação bidirecional em tempo real.  
-- **JWT:** Token usado para autenticação e autorização de usuários.  
-```
