@@ -18,7 +18,7 @@ O sistema segue uma arquitetura modular e escalável, dividida em quatro camadas
 ```plaintext
 +---------------------+       WebSocket           +--------------------+
 |     Frontend        | <--------------------->   |     Backend        |
-| (HTML, Vue.js)      |                           | (Django + REST API)|
+|  (HTML, JS, CSS)    |                           | (Django + REST API)|
 +---------------------+        HTTP/REST          +--------------------+
           |                                                 |
           | Database Queries                                | External Services
@@ -67,31 +67,52 @@ O sistema segue uma arquitetura modular e escalável, dividida em quatro camadas
 
 ## **4. Fluxo de Dados e Interações entre Componentes**
 
-### **Descrição do Fluxo**  
-1. **Usuário:**  
-   - Realiza login e navega no dashboard.  
-   - Realiza alterações ou consultas no inventário.  
+### **Fluxo de Interações**
 
-2. **Frontend:**  
-   - Envia solicitações ao backend via APIs REST.  
-   - Escuta eventos via WebSocket para atualizações em tempo real.  
+1. **Homepage:**  
+   - O usuário acessa a página inicial do sistema.
 
-3. **Backend:**  
-   - Recebe as solicitações REST e processa as regras de negócios.  
-   - Salva/consulta dados no banco de dados PostgreSQL.  
-   - Notifica clientes conectados usando WebSocket.  
+2. **Login:**  
+   - O usuário realiza o login através da interface de login.
 
-4. **Banco de Dados:**  
-   - Armazena todas as informações persistentes.  
-   - Atualiza logs automaticamente em cada alteração.  
+3. **Seleção de Inventário:**  
+   - Após o login, o usuário escolhe o inventário com o qual deseja interagir.
 
-5. **Serviços Externos:**  
-   - Autenticação e análises opcionais são chamadas conforme necessidade.  
+4. **Dashboard de Inventário:**  
+   - O sistema exibe o dashboard com os itens do inventário selecionado, mostrando informações detalhadas sobre o estoque.
 
 ### **Fluxo em Diagrama**  
-Usuário --> Frontend --> Backend --> Banco de Dados | ^ | ^ | | | | Notificações <-- WebSocket <--| |
+```plaintext
+Homepage --> Login --> Seleção de Inventário --> Dashboard (Itens do Inventário)
+```
 
+### **Fluxo de Dados e Interações entre Componentes**
 
+O fluxo de dados pode ser descrito da seguinte forma:
+
+1. **Usuário:**  
+   - Navega entre as páginas: homepage, login, seleção de inventário e dashboard.
+
+2. **Frontend:**  
+   - O frontend lida com a navegação entre as páginas e as interações com o usuário. Ele envia as solicitações de login e de seleção de inventário para o backend via APIs REST.
+
+3. **Backend:**  
+   - O backend recebe as solicitações de login e de seleção de inventário e processa as regras de negócios, como autenticação de usuário e recuperação dos dados do inventário. O backend também faz consultas no banco de dados PostgreSQL para fornecer os dados necessários para o dashboard.
+
+4. **Banco de Dados:**  
+   - O banco de dados armazena e fornece os dados necessários para exibir os itens do inventário no dashboard, como nome, categoria e quantidade de itens.
+
+5. **Serviços Externos:**  
+   - Dependendo da configuração do sistema, pode haver integrações externas para autenticação (SSO) ou análise de dados (relatórios).
+
+Esse fluxo representa a navegação típica do usuário, com interações entre o frontend, backend e o banco de dados. O diagrama de fluxo de dados pode ser representado de forma simplificada como abaixo:
+
+```plaintext
+Usuário --> Frontend --> Backend --> Banco de Dados
+   |            ^             |            ^
+   |            |             |            |
+Notificações <-- WebSocket <--|            |
+``` 
 ---
 
 ## **5. Estrutura de Diretórios**
@@ -114,3 +135,29 @@ inventory-management/
 ├── manage.py                 # Script principal do Django
 ├── requirements.txt          # Dependências do projeto
 └── ...
+```
+
+---
+
+## **6. Segurança**  
+- Criptografia de senhas com o módulo `pbkdf2` do Django.  
+- Validação de entrada nos endpoints REST com DRF.  
+- Permissões definidas com base em grupos de usuários.  
+
+---
+
+## **7. Testes**  
+
+| Tipo               | Descrição                                               | Ferramenta         |  
+|---------------------|---------------------------------------------------------|--------------------|  
+| Teste Unitário      | Verifica funções individuais (ex.: validação de dados). | pytest-django      |  
+| Teste de Integração | Garante o funcionamento entre módulos (ex.: views e API). | Django Test Framework |  
+| Teste End-to-End    | Simula fluxo de usuário no frontend e backend.          | Selenium/Playwright|  
+
+---
+
+## **8. Glossário**  
+- **CSRF:** Proteção contra falsificação de requisições.  
+- **Socket.IO:** Biblioteca para comunicação bidirecional em tempo real.  
+- **JWT:** Token usado para autenticação e autorização de usuários.
+``` 
