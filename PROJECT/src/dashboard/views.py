@@ -19,59 +19,56 @@ def dashboard_view(request):
 def product_manager(request):
 
     if request.method == 'GET':
+        product_name = request.GET.get('product')
+
+        if not product_name:
+            return Response({'error': 'Product name not provided'}, status=status.HTTP_400_BAD_REQUEST)
+
         try:
-            if request.GET['product']:
+            product = ProductTable.objects.get(product_name=product_name)
+            serializer = ProductSerializer(product)
+            return Response(serializer.data)
+        except ProductTable.DoesNotExist:
+            return Response({'error': 'Product not found'}, status=status.HTTP_404_NOT_FOUND)
 
-                product_name = request.GET['product']
-
-                try:
-                    product = ProductTable.objects.get(pk=product_name)
-                except:
-                    return Response(status=status.HTTP_404_NOT_FOUND)
-                
-                serializer = ProductSerializer(product)
-                return Response(serializer.data)
         
-            else:
-                return Response(status=status.HTTP_400_BAD_REQUEST)
-            
-        except:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
-        
-    if request.method == 'POST':
-
-        new_product = request.data
-
-        serializer = request.data
+    elif request.method == 'POST':
+        serializer = ProductSerializer(data=request.data)
 
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        
-        return Response(status=status.HTTP_400_BAD_REQUEST)
 
-    if request.method == 'PUT':
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        name = request.data['product_name']
+    elif request.method == 'PUT':
+        product_name = request.data.get('product_name')
+
+        if not product_name:
+            return Response({'error': 'Product name not provided'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            updated_product = ProductTable.objects.get(pk=name)
-        except:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-        
-        serializer = ProductSerializer(updated_product, data=request.data)
+            product = ProductTable.objects.get(product_name=product_name)
+        except ProductTable.DoesNotExist:
+            return Response({'error': 'Product not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = ProductSerializer(product, data=request.data, partial=True)
 
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
-        
-        return Response(status=status.HTTP_400_BAD_REQUEST)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-    if request.method == 'DELETE':
+    elif request.method == 'DELETE':
+        product_name = request.data.get('product_name')
+
+        if not product_name:
+            return Response({'error': 'Product name not provided'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            product_to_delete = ProductTable.objects.get(pk=request.data['product_name'])
-            product_to_delete.delete()
-            return Response(status=status.HTTP_202_ACCEPTED)
-        except:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+            product = ProductTable.objects.get(product_name=product_name)
+            product.delete()
+            return Response({'message': 'Product deleted successfully'}, status=status.HTTP_202_ACCEPTED)
+        except ProductTable.DoesNotExist:
+            return Response({'error': 'Product not found'}, status=status.HTTP_404_NOT_FOUND)
