@@ -1,3 +1,4 @@
+site_dir: DOCS
 site_name: Gestão de Inventário
 theme:
   name: material
