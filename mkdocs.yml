@@ -1,5 +1,6 @@
 site_dir: site
 site_url: https://unb-mds.github.io/2024-2-Squad04/
+docs_dir: DOCS
 site_name: Gestão de Inventário
 theme:
   # tema personalizado
