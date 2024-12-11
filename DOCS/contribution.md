@@ -12,7 +12,7 @@
 3. [Tecnologias Utilizadas](#tecnologias-utilizadas) 
     - [Frontend](#frontend)  
     - [Backend](#backend)  
-    - [Banco de dados](#database)  
+    - [Banco de dados](#banco-de-dados)  
 4. [Licença](#licença)  
 
 ## Como Contribuir
@@ -67,7 +67,9 @@ Para contribuir com código, siga estas etapas:
 
 ### Backend
 - **Django:** Framework web em Python.  
-- **Django Rest Framework:** Extensão do Django para criar APIs RESTful.  
+- **Django Rest Framework:** Extensão do Django para criar APIs RESTful. 
+- **Socket.IO:** Biblioteca para comunicação em tempo real baseada em WebSockets.
+- **Django Channels:** Extensão do Django para adicionar suporte a protocolos assíncronos, como WebSockets, HTTP/2 e outros. 
 
 ### Banco de dados
 - **PostgreSQL:** Sistema de gerenciamento de banco de dados relacional.  
@@ -75,4 +77,4 @@ Para contribuir com código, siga estas etapas:
 
 ## Licença
 
-Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
+Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](../LICENSE) para mais detalhes.
