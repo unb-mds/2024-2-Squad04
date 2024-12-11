@@ -33,7 +33,7 @@ O sistema segue uma arquitetura modular e escalável, dividida em quatro camadas
 ## **3. Principais Componentes e Papéis**  
 
 ### **3.1 Frontend**  
-- Desenvolvido com Vue.js ou HTML5 e Bootstrap.  
+- Desenvolvido com JS, HTML5 e CSS.  
 - Exibe informações do estoque em dashboards e tabelas.  
 - Responsável por:  
   - Entrada de dados de usuários.  
@@ -118,23 +118,38 @@ Notificações <-- WebSocket <--|            |
 ## **5. Estrutura de Diretórios**
 
 ```plaintext
-inventory-management/
-├── backend/
-│   ├── inventory/
-│   │   ├── models.py         # Modelos de dados
-│   │   ├── views.py          # Lógica de negócios
-│   │   ├── serializers.py    # Serializadores para DRF
-│   │   ├── urls.py           # Rotas da API
-│   ├── channels.py           # Configurações de WebSocket
-│   ├── settings.py           # Configurações principais
-│   └── ...
-├── frontend/
-│   ├── static/               # Arquivos CSS e JS
-│   ├── templates/            # Templates HTML
-│   └── ...
-├── manage.py                 # Script principal do Django
-├── requirements.txt          # Dependências do projeto
-└── ...
+├── apps
+│   ├── dashboard
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   └── views.py
+│   └── homepage
+│       ├── admin.py
+│       ├── apps.py
+│       ├── models.py
+│       ├── tests.py
+│       └── views.py
+├── manage.py
+├── mysite
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── static
+│   ├── base.css
+│   ├── dashboard
+│   │   └── dashboard.css
+│   └── homepage
+│       └── homepage.css
+├── templates
+│   ├── base.html
+│   ├── dashboard
+│   │   └── dashboard.html
+│   └── homepage
+│       └── homepage.html
+└── REQUIREMENTS.txt
 ```
 
 ---
@@ -160,4 +175,3 @@ inventory-management/
 - **CSRF:** Proteção contra falsificação de requisições.  
 - **Socket.IO:** Biblioteca para comunicação bidirecional em tempo real.  
 - **JWT:** Token usado para autenticação e autorização de usuários.
-``` 
