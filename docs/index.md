@@ -1,17 +1,6 @@
-# Documentação de Gestão de Inventário
+# Gestão de Inventário
+Este é um sistema open-source para gestão de inventário, projetado para ajudar pequenas e médias empresas, equipes ou indivíduos a rastrear e gerenciar seus itens, estoques e ativos de forma eficiente.
+***
+## Sobre o projeto
+Este projeto faz parte da disciplina de Métodos de Desenvolvimento de Software, lecionada pela professora Carla Rocha, na Universidade de Brasília
 
-<!-- For full documentation visit [mkdocs.org](https://www.mkdocs.org). -->
-
-<!-- ## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit. -->
-
-<!-- ## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files. -->
