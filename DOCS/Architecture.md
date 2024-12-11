@@ -14,19 +14,44 @@ O sistema segue uma arquitetura modular e escalável, dividida em quatro camadas
 3. **Banco de Dados:** Armazena dados estruturados e históricos de ações.  
 4. **Serviços Externos:** Integrações opcionais, como provedores de autenticação ou relatórios analíticos.  
 
-### **Diagrama de Arquitetura Geral** 
+### **Diagrama de Arquitetura Geral Inicial** 
 ```plaintext
 +---------------------+       WebSocket           +--------------------+
 |     Frontend        | <--------------------->   |     Backend        |
 |  (HTML, JS, CSS)    |                           | (Django + REST API)|
 +---------------------+        HTTP/REST          +--------------------+
-          |                                                 |
-          | Database Queries                                | External Services
-          V                                                 V
-+---------------------+       PostgreSQL          +--------------------+
-|  Banco de Dados     |                           |  Integrações       |
-| (Dados do estoque)  |                           | (Auth, Analytics)  |
-+---------------------+                           +--------------------+
+                                   |                                |
+                                   | Database Queries               | External Services
+                                   V                                V
+                         +---------------------+                 +--------------------+
+                         |    Banco de Dados   |                 |  Integrações       |
+                         |     (PostgreSQL)    |                 | (Auth, Analytics)  |
+                         +---------------------+                 +--------------------+
+```
+
+### **Diagrama de Arquitetura Geral Ideal** 
+```plaintext
++---------------------+     WebSocket (Socket.IO)    +---------------------+
+|     Frontend        | <------------------------->  |     Backend         |
+|  (HTML, JS, CSS)    |                              | (Django + Channels) |
++---------------------+         HTTP/REST            +---------------------+
+                                    |
+                                    |
+                                    V
+                         +---------------------+
+                         |   Message Broker    |
+                         |       (Redis)       |
+                         +---------------------+
+                                    ^
+                                    |
+                                    |
+                 +------------------+------------------+
+                 |                                     |
++---------------------+                +------------------------+
+|    Banco de Dados   |                |    Workers e Tarefas   |
+|(PostgreSQL ou afins)|                | (Auth, Analytics, etc.)|
++---------------------+                +------------------------+
+
 ```
 
 
@@ -175,3 +200,4 @@ Notificações <-- WebSocket <--|            |
 - **CSRF:** Proteção contra falsificação de requisições.  
 - **Socket.IO:** Biblioteca para comunicação bidirecional em tempo real.  
 - **JWT:** Token usado para autenticação e autorização de usuários.
+
