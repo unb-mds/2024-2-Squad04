@@ -1,4 +1,5 @@
 site_dir: DOCS
+docs_dir: DOCS
 site_name: Gestão de Inventário
 theme:
   # tema personalizado
