@@ -25,6 +25,8 @@ from apps.dashboard.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_page_view, name= "home"),
+    path('', home_page_view, name='homepage'),
+    path('/', home_page_view, name='homepage'),
+    path('homepage/', home_page_view, name= "homepage"),
     path('dashboard/', dashboard_view, name= "dashboard"),
 ]
