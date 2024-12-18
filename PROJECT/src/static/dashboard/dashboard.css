@@ -7,12 +7,16 @@ border-collapse: collapse;
 margin-top: 20px;
 }
 table, th, td {
-border: 1px solid black;
+border: 2px solid black;
 }
 th, td {
 padding: 8px;
 text-align: left;
+width: 300px;
 }
+tr:nth-of-type(odd) {
+    background-color: #eee;
+  }
 .modal {
 display: none;
 position: fixed;
@@ -30,7 +34,7 @@ align-items: center;
 background-color: white;
 padding: 20px;
 border-radius: 5px;
-width: 400px;
+width: 230px;
 }
 .modal-header {
 font-size: 18px;
@@ -38,7 +42,7 @@ font-weight: bold;
 margin-bottom: 10px;
 }
 .modal-footer {
-text-align: right;
+text-align: center;
 }
 .btn {
 padding: 8px 16px;

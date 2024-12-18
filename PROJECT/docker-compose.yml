@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: bitnami/postgresql:latest
+    ports:
+      - '5433:5432'
+    environment:
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - POSTGRES_DB=$POSTGRES_DB
+    volumes:
+      - polls_pg_data:/bitnami/postgresql
+
+
+# redis:
+#   postgres:
+#     image: bitnami/redis:latest
+#     environment:
+#       - ALLOW_EMPTY_PASSWORD=YES
+#     ports:
+#       - '5379:5379'
+#     volumes:
+#       - polls_redis_data:/bitnami/redis/data
+
+
+volumes:
+  polls_pg_data:
+  # polls_redis_data:
