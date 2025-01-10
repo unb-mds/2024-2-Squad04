@@ -7,3 +7,7 @@
 # ignora o cache
 *.pyc
 __pycache__/
+
+# ignora o arquivo de migração(Apagar quando projeto estiver pronto)
+
+*_initial.py
