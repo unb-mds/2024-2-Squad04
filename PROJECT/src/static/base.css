@@ -5,13 +5,23 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+p {
+    color: #161617;
+}
+
+body {
+    background-color: #fafafc; /* Substitua pelo tom de cinza desejado */
+    margin: 0; /* Remove margens padrão do navegador */
+    padding: 0; /* Remove paddings padrão do navegador */
+}
+
 header, footer{
-    background-color: black;
-    color: aliceblue;
     width: 100vw;  /* Garante que o header e footer ocupem toda a largura da página */
 }
 
 footer{
+    background-color: #c9c9c9;
+    color: #161617;
     position: absolute; /* Altera a posição para 'relative' ou remova a posição absoluta */
     bottom: 0;
     text-align: center;
@@ -24,20 +34,23 @@ header h2{
 }
 
 header{
+    background-color: #ffffff;
+    color: #161617;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100vw;  /* Garante que o header ocupe toda a largura da página */
 }
 
 nav ul li{
+    background-color: #ffffff;
+    color: #161617;
     list-style: none;
     display: inline-block;
 }
 
 nav ul li a{
     text-decoration: none;
-    color: aliceblue;
+    color: #161617;
     font-size: 18px;
     padding: 0 15px;
 }
