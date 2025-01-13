@@ -1,8 +1,8 @@
 nav {
     margin: 0;
     padding: 10px 20px;
-    background-color: black;
-    color: white;
+    background-color: #ffffff;
+    color: #15a12d;
     text-align: center;
 }
 
@@ -28,13 +28,17 @@ ul {
     padding-left: 20px;
 }
 
-#hero button:hover {
-    background-color: #388E3C;
+#hero button {
+    background-color: #06c;
     color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-#content div:hover {
-    border-color: #4CAF50;
-    transform: scale(1.05);
-    transition: all 0.3s ease;
+#hero button:hover {
+    background-color: #0071e3;
+    color: white;
 }
