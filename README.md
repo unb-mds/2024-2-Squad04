@@ -45,7 +45,7 @@ Esse é um projeto da disciplina de Métodos de Desenvolvimento de Software, da 
 
 <br>
 
-6. Crie um arquivo ".env" na pasta /PROJECT, e insira as variáveis do projeto;
+6. Crie um arquivo ".env" na pasta /PROJECT, e insira as variáveis do projeto(requisitar elas com os desenvolvedores);
 
 <br>
 
