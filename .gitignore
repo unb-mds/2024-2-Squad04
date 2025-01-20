@@ -1,0 +1,13 @@
+# ignora ambiente virtual
+.venv
+
+#ignora 
+.env
+
+# ignora o cache
+*.pyc
+__pycache__/
+
+# ignora o arquivo de migração(Apagar quando projeto estiver pronto)
+
+*_initial.py
