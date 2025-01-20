@@ -6,7 +6,8 @@
 - [1. Descrição 💡](#1-descrição-)
 - [2. Pré-requisitos 📋](#2-pré-requisitos-)
 - [3. Etapas para a Execução do Ambiente 🔧](#3-etapas-para-a-execução-do-ambiente-)
-- [4. Equipe 👥](#4-equipe-)
+- [4. Novas Planilhas do Banco](#4-novas-planilhas-no-banco-)
+- [5. Equipe 👥](#4-equipe-)
 
 <br>
 
@@ -18,7 +19,7 @@ Esse é um projeto da disciplina de Métodos de Desenvolvimento de Software, da 
 ## 2. Pré-requisitos 📋
 1. Python; [[LINK]](https://www.python.org/downloads/)
 2. Docker Engine (ou Docker desktop); [[LINK]](https://www.docker.com/products/docker-desktop/)
- 
+3. Django Models; [[LINK]](https://docs.djangoproject.com/en/5.1/topics/db/models/) 
 <br>
 
 ## 3. Etapas para a Execução do Ambiente 🔧
@@ -44,7 +45,7 @@ Esse é um projeto da disciplina de Métodos de Desenvolvimento de Software, da 
 
 <br>
 
-6. Crie um arquivo ".env" na pasta /PROJECT, e insira as variáveis do projeto;
+6. Crie um arquivo ".env" na pasta /PROJECT, e insira as variáveis do projeto(requisitar elas com os desenvolvedores);
 
 <br>
 
@@ -52,11 +53,19 @@ Esse é um projeto da disciplina de Métodos de Desenvolvimento de Software, da 
     ```Bash
     docker compose up -d
 
-8. Aplique as migrações do banco de dados;
+8. Navegue até a raiz do projeto;
+    ```Bash
+    cd src 
+
+9. Gere os arquivos de migração; 
+    ```Bash
+    python manage.py makemigrations
+
+10. Aplique as migrações do banco de dados;
     ```Bash
     python manage.py migrate
 
-9. Inicie o servidor de desenvolvimento;
+11. Inicie o servidor de desenvolvimento;
     ```Bash
     python manage.py runserver
 
@@ -64,7 +73,27 @@ E pronto! Assim está pronto para a execução do ambiente do projeto.
 
 <br>
 
-## 4. Equipe 👥
+## 4. Novas Planilhas no Banco 🏦
+
+1. Crie ou modifique uma planilha seguindo o models;
+
+<br>
+
+2. Navegue até a raiz do projeto;
+    ```Bash
+     cd .\PROJECT\src\ 
+
+3. Gere os arquivos de migração; 
+    ```Bash
+    python manage.py makemigrations
+
+4. Aplique as migrações do banco de dados;
+    ```Bash
+    python manage.py migrate
+
+<br>
+
+## 5. Equipe 👥
 
 | Scrum Master | Product Owner | Front-End Developer | Back-End Developer | Front-End Developer | Architect |
 |:-------------------------------------------------------------:|:-----------------------------------------------------------:|:-----------------------------------------------------------:|:-----------------------------------------------------------:|:-----------------------------------------------------------:|:-----------------------------------------------------------:|
