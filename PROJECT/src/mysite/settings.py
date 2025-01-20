@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     #My apps
     'apps.dashboard',
     'apps.homepage',
+    'rest_framework',
 
     #Django base apps
     'django.contrib.admin',
