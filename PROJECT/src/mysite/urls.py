@@ -22,6 +22,10 @@ from apps.homepage.views import (
 from apps.dashboard.views import (
     dashboard_view,
 )
+from apps.login.views import (
+    login_view,
+)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +33,6 @@ urlpatterns = [
     path('/', home_page_view, name='homepage'),
     path('homepage/', home_page_view, name= "homepage"),
     path('dashboard/', dashboard_view, name= "dashboard"),
+    path('login/', login_view.as_view(), name='login'),
+    #path('register/', register_view, name='register'),
 ]

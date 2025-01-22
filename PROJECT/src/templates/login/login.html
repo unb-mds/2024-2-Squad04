@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="login-container">
+    <h1>Login</h1>
+    <br/>
+    <div class="login-fields">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+
+        <button id="login-button" onclick="handleLogin()">Login</button>
+    </div>
+</div>
+
+<script>
+    function handleLogin() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Envie os dados usando uma requisição fetch ou similar
+        fetch('/login/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}', // Inclua o token CSRF no cabeçalho
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password,
+            }),
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = '/homepage/'; // Redirecione após o login bem-sucedido
+            } else {
+                alert('Login failed. Please check your credentials.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>
+{% endblock content %}
