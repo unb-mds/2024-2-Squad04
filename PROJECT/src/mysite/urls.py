@@ -25,14 +25,16 @@ from apps.dashboard.views import (
 from apps.login.views import (
     login_view,
 )
+from apps.register.views import(
+    register_view,
+)
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_page_view, name='homepage'),
-    path('/', home_page_view, name='homepage'),
-    path('homepage/', home_page_view, name= "homepage"),
-    path('dashboard/', dashboard_view, name= "dashboard"),
+    path('', home_page_view, name='homepage'),  # Página inicial (raiz)
+    path('homepage/', home_page_view, name='homepage_redirect'),  # Opcional, caso queira um redirecionamento explícito
+    path('dashboard/', dashboard_view, name='dashboard'),
     path('login/', login_view.as_view(), name='login'),
-    #path('register/', register_view, name='register'),
+    path('register/', register_view, name='register'),
 ]
