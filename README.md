@@ -1,5 +1,7 @@
 # 📚 2024-2-Squad04 📚 <!-- omit from toc -->
 
+![Lint Status](https://github.com/USERNAME/REPOSITORY/actions/workflows/lint.yml/badge.svg)
+
 <br>
 
 ## ***Sumário*** <!-- omit from toc -->
