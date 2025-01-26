@@ -1,8 +1,10 @@
-# 📚 2024-2-Squad04 📚 <!-- omit from toc -->
-
-![Lint Status](https://github.com/USERNAME/REPOSITORY/actions/workflows/lint.yml/badge.svg)
+# 📚AGIO📚
+<!-- ###### Aplicação de Gestão de Inventário Otimizada -->
+![Lint Status](https://github.com/unb-mds/2024-2-Agio/actions/workflows/lint.yml/badge.svg)
 
 <br>
+
+##  2024-2-Squad04 
 
 ## ***Sumário*** <!-- omit from toc -->
 - [1. Descrição 💡](#1-descrição-)
