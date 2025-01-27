@@ -18,7 +18,7 @@ def dashboard_view(request):
 
 class ProductManager(APIView):
 
-    def get(self, request):
+    def GET(self, request):
 
         product_name = request.GET.get('product')
 
@@ -36,7 +36,7 @@ class ProductManager(APIView):
             return Response({'error': 'Product not found'}, status=status.HTTP_404_NOT_FOUND)
 
             
-    def post(self, request):
+    def POST(self, request):
         serializer = ProductSerializer(data=request.data)
 
         if serializer.is_valid():
@@ -47,7 +47,7 @@ class ProductManager(APIView):
         logger.error(f"POST request failed: Invalid data fot Product '{serializer.data['product_name']}'")
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def put(self, request):
+    def PUT(self, request):
         product_name = request.data.get('product_name')
 
         if not product_name:
@@ -70,7 +70,7 @@ class ProductManager(APIView):
         logger.error(f"PUT request failed: Invalid data fot Product {product_name}")
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-    def delete(self, request):
+    def DELETE(self, request):
         product_name = request.data.get('product_name')
 
         if not product_name:
