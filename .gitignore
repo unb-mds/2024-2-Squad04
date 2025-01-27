@@ -11,6 +11,3 @@ __pycache__/
 # ignora o arquivo de migração(Apagar quando projeto estiver pronto)
 
 *_initial.py
-
-# ignora os migrations(tirar no final)
-migrations
